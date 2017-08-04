@@ -1,0 +1,15 @@
+group 'io.mifos'
+
+task publishAccountingToMavenLocal {
+    dependsOn gradle.includedBuild('accounting').task(':publishToMavenLocal')
+}
+
+task publishToMavenLocal {
+    group 'all'
+    dependsOn publishAccountingToMavenLocal
+}
+
+task licenseFormat {
+    group 'all'
+    dependsOn gradle.includedBuild('accounting').task(':licenseFormat')
+}

@@ -1,0 +1,37 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
+    }
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath ("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id "com.github.hierynomus.license" version "0.13.1"
+}
+
+apply from: '../shared.gradle'
+
+dependencies {
+    testCompile(
+            [group: 'org.hibernate', name: 'hibernate-validator', version: versions.validator],
+            [group: 'io.mifos.accounting', name: 'importer', version: versions.accounting],
+    )
+}
+
+publishing {
+    publications {
+        service(MavenPublication) {
+            from components.java
+            groupId project.group
+            artifactId project.name
+            version project.version
+        }
+    }
+}

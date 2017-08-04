@@ -1,0 +1,58 @@
+group 'io.mifos.default-setup'
+version '0.1.0-BUILD-SNAPSHOT'
+
+ext.versions = [
+        accounting : '0.1.0-BUILD-SNAPSHOT',
+        validator : '5.3.0.Final'
+]
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+apply plugin: 'io.spring.dependency-management'
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    jcenter()
+    mavenLocal()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:Athens-RELEASE'
+    }
+}
+
+// override certain dependency provided by Spring platform using newer releases
+
+dependencies {
+    compile(
+            [group: 'com.google.code.findbugs', name: 'jsr305']
+    )
+
+    testCompile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-test']
+    )
+}
+
+jar {
+    from sourceSets.main.allSource
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+license {
+    header rootProject.file('../HEADER')
+    strictCheck true
+    mapping {
+        java = 'SLASHSTAR_STYLE'
+        xml = 'XML_STYLE'
+        yml = 'SCRIPT_STYLE'
+        yaml = 'SCRIPT_STYLE'
+    }
+    ext.year = Calendar.getInstance().get(Calendar.YEAR)
+    ext.name = 'The Mifos Initiative'
+}
