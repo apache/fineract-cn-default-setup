@@ -32,9 +32,11 @@ parentIdentifier,identifier,description,type,show
 7000,7100,"Other Loans",ASSET,true
 7000,7200,"Other Receivables",ASSET,true
 7000,7300,"Cash Accounts",ASSET,true
-7000,7350,"Change Fund",ASSET,true
+7300,7310,"Bank account one",ASSET,true
+7300,7311,"Bank account two",ASSET,true
+7300,7350,"Change Fund",ASSET,true
 7000,7400,"Investments",ASSET,true
-7000,7420,"Federal Agency Securities",ASSET,true
+7400,7420,"Federal Agency Securities",ASSET,true
 7000,7500,"Investments—Investment Allowance",ASSET,true
 7000,7600,"Prepaid Expenses and Deferred Charges",ASSET,true
 7000,7700,"Fixed Assets",ASSET,true
