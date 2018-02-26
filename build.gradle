@@ -1,4 +1,4 @@
-group 'io.mifos'
+group 'org.apache.fineract.cn'
 
 task publishAccountingToMavenLocal {
     dependsOn gradle.includedBuild('accounting').task(':publishToMavenLocal')

@@ -21,7 +21,7 @@ apply from: '../shared.gradle'
 dependencies {
     testCompile(
             [group: 'org.hibernate', name: 'hibernate-validator', version: versions.validator],
-            [group: 'io.mifos.accounting', name: 'importer', version: versions.accounting],
+            [group: 'org.apache.fineract.cn.accounting', name: 'importer', version: versions.accounting],
     )
 }
 
