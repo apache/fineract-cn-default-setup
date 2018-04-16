@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package io.mifos;
+package org.apache.fineract.cn;
 
 import java.io.IOException;
 import java.net.URL;
