@@ -86,7 +86,7 @@ public class ImportTest {
     }
 
     @Override
-    public Void answer(InvocationOnMock invocation) throws Throwable {
+    public Void answer(InvocationOnMock invocation) {
       final Ledger ledger = invocation.getArgumentAt(indexOfLedger, Ledger.class);
 
       final ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
@@ -102,7 +102,7 @@ public class ImportTest {
 
   class ReturnLedgers implements Answer {
     @Override
-    public Ledger answer(InvocationOnMock invocation) throws Throwable {
+    public Ledger answer(InvocationOnMock invocation) {
       final String ledgerIdentifier = invocation.getArgumentAt(0, String.class);
       return createdLedgers.get(ledgerIdentifier);
     }
@@ -118,7 +118,7 @@ public class ImportTest {
     }
 
     @Override
-    public Void answer(InvocationOnMock invocation) throws Throwable {
+    public Void answer(InvocationOnMock invocation) {
       final T thingy = invocation.getArgumentAt(indexOfArgument, thingyClass);
 
       final ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
