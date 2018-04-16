@@ -1,7 +1,5 @@
 # Apache Fineract CN default setup
 
-[![Join the chat at https://gitter.im/mifos-initiative/mifos.io](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mifos-initiative/mifos.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 This project provides resources which can be used to create a default setup for microservices in [Apache Fineract CN](https://github.com/search?q=org%3Aapache+fineract) deployment. It is dependent on the apis and importers of those microservices.
 
 ## Abstract

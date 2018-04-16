@@ -16,13 +16,22 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package io.mifos;
+package org.apache.fineract.cn;
 
-import io.mifos.accounting.api.v1.client.LedgerManager;
-import io.mifos.accounting.api.v1.domain.Account;
-import io.mifos.accounting.api.v1.domain.Ledger;
-import io.mifos.accounting.importer.AccountImporter;
-import io.mifos.accounting.importer.LedgerImporter;
+import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import org.apache.fineract.cn.accounting.api.v1.client.LedgerManager;
+import org.apache.fineract.cn.accounting.api.v1.domain.Account;
+import org.apache.fineract.cn.accounting.api.v1.domain.Ledger;
+import org.apache.fineract.cn.accounting.importer.AccountImporter;
+import org.apache.fineract.cn.accounting.importer.LedgerImporter;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,16 +43,6 @@ import org.mockito.stubbing.Answer;
 import org.slf4j.Logger;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
-import java.io.IOException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * @author Myrle Krantz
@@ -87,7 +86,7 @@ public class ImportTest {
     }
 
     @Override
-    public Void answer(InvocationOnMock invocation) throws Throwable {
+    public Void answer(InvocationOnMock invocation) {
       final Ledger ledger = invocation.getArgumentAt(indexOfLedger, Ledger.class);
 
       final ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
@@ -103,7 +102,7 @@ public class ImportTest {
 
   class ReturnLedgers implements Answer {
     @Override
-    public Ledger answer(InvocationOnMock invocation) throws Throwable {
+    public Ledger answer(InvocationOnMock invocation) {
       final String ledgerIdentifier = invocation.getArgumentAt(0, String.class);
       return createdLedgers.get(ledgerIdentifier);
     }
@@ -119,7 +118,7 @@ public class ImportTest {
     }
 
     @Override
-    public Void answer(InvocationOnMock invocation) throws Throwable {
+    public Void answer(InvocationOnMock invocation) {
       final T thingy = invocation.getArgumentAt(indexOfArgument, thingyClass);
 
       final ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
