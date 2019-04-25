@@ -26,6 +26,12 @@ task publishToMavenLocal {
     dependsOn publishAccountingToMavenLocal
 }
 
+task artifactoryPublish {
+    group 'all'
+    dependsOn publishToMavenLocal
+    dependsOn gradle.includedBuild('accounting').task(':artifactoryPublish')
+}
+
 task licenseFormat {
     group 'all'
     dependsOn gradle.includedBuild('accounting').task(':licenseFormat')
