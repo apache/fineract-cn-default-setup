@@ -1,4 +1,4 @@
-# Apache Fineract CN default setup
+# Apache Fineract CN default setup [![Build Status](https://api.travis-ci.com/apache/fineract-cn-default-setup.svg?branch=develop)](https://travis-ci.com/apache/fineract-cn-default-setup)
 
 This project provides resources which can be used to create a default setup for microservices in [Apache Fineract CN](https://github.com/search?q=org%3Aapache+fineract) deployment. It is dependent on the apis and importers of those microservices.
 
