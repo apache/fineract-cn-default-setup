@@ -101,4 +101,5 @@ rat {
             "gradlew.bat",
             "README.md"
     ]
+    plainOutput = true
 }
