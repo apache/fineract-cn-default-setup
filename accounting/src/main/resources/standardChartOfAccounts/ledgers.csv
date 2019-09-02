@@ -4,7 +4,7 @@ parentIdentifier,identifier,description,type,show
 1000,1200,"Investment Income",REVENUE,true
 1000,1300,"Fees and Charges",REVENUE,true
 1000,1400,"Gain (Loss) on Sale of Loans",REVENUE,true
-1000,1500,"Miscellaneouse Income",REVENUE,true
+1000,1500,"Miscellaneous Income",REVENUE,true
 1000,1600,"Service Income on Loans",REVENUE,true
 1000,1700,"Trading Profits & Losses",REVENUE,true
 ,2000,"Expenses",EXPENSE,true
@@ -41,7 +41,7 @@ parentIdentifier,identifier,description,type,show
 7000,7600,"Prepaid Expenses and Deferred Charges",ASSET,true
 7000,7700,"Fixed Assets",ASSET,true
 7000,7800,"Accrued Income",ASSET,true
-7000,7900,"Other Assets",ASSET,true
+7000,7900,"Other Assets",ASSET,true,
 ,8000,"Accounts Payable",LIABILITY,true
 8000,8100,"Accounts Payable",LIABILITY,true
 8000,8200,"Interest Payable",LIABILITY,true
