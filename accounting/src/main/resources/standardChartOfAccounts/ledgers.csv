@@ -41,7 +41,7 @@ parentIdentifier,identifier,description,type,show
 7000,7600,"Prepaid Expenses and Deferred Charges",ASSET,true
 7000,7700,"Fixed Assets",ASSET,true
 7000,7800,"Accrued Income",ASSET,true
-7000,7900,"Other Assets",ASSET,true,
+7000,7900,"Other Assets",ASSET,true
 ,8000,"Accounts Payable",LIABILITY,true
 8000,8100,"Accounts Payable",LIABILITY,true
 8000,8200,"Interest Payable",LIABILITY,true
